@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura Pixel - Juego de plataformas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">★</span> AVENTURA PIXEL</div>
+      <div class="hud">
+        <span>PUNTOS <b id="score">000000</b></span>
+        <span>MONEDAS <b id="coins">00</b></span>
+        <span>VIDAS <b id="lives">3</b></span>
+        <span>NIVEL <b id="level">1</b></span>
+      </div>
+      <button id="soundBtn" class="small-btn" aria-label="Activar o silenciar sonido">🔊 Sonido</button>
+    </header>
+
+    <section class="stage-wrap">
+      <canvas id="game" width="960" height="540" aria-label="Videojuego de plataformas"></canvas>
+
+      <section id="startScreen" class="overlay">
+        <div class="panel">
+          <p class="eyebrow">UNA AVENTURA DE PLATAFORMAS</p>
+          <h1>AVENTURA<br><span>PIXEL</span></h1>
+          <p>Salta, recoge monedas y llega a la bandera.</p>
+          <button id="playBtn" class="main-btn">▶ JUGAR</button>
+          <button id="instructionsBtn" class="secondary-btn">¿CÓMO JUGAR?</button>
+          <p class="sound-note">♫ Incluye efectos de sonido y música original generada en el navegador.</p>
+        </div>
+      </section>
+
+      <section id="instructionsScreen" class="overlay hidden">
+        <div class="panel compact">
+          <h2>¿CÓMO JUGAR?</h2>
+          <p><kbd>←</kbd> <kbd>→</kbd> Moverse</p>
+          <p><kbd>ESPACIO</kbd> Saltar (mantén para saltar más alto)</p>
+          <p><kbd>SHIFT</kbd> Correr · <kbd>P</kbd> Pausar</p>
+          <p>Salta sobre los enemigos, recoge monedas y alcanza la bandera.</p>
+          <button id="backBtn" class="main-btn">ENTENDIDO</button>
+        </div>
+      </section>
+
+      <section id="pauseScreen" class="overlay hidden">
+        <div class="panel compact"><h2>JUEGO EN PAUSA</h2><p>Presiona P o continúa.</p><button id="resumeBtn" class="main-btn">CONTINUAR</button></div>
+      </section>
+
+      <section id="endScreen" class="overlay hidden">
+        <div class="panel compact">
+          <h2 id="endTitle">¡FIN DEL JUEGO!</h2>
+          <p id="endMessage">Inténtalo otra vez.</p>
+          <button id="restartBtn" class="main-btn">VOLVER A JUGAR</button>
+        </div>
+      </section>
+    </section>
+
+    <footer class="bottom-bar">
+      <span>Explora • Salta • Descubre</span>
+      <span class="desktop-help">Teclado: ← → · ESPACIO · SHIFT · P</span>
+      <span class="mobile-help">Usa los controles táctiles</span>
+    </footer>
+    <nav class="touch-controls" aria-label="Controles táctiles">
+      <button data-key="ArrowLeft">◀</button>
+      <button data-key="ArrowRight">▶</button>
+      <button data-key="Space" class="jump-touch">SALTO</button>
+    </nav>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
